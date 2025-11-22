@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1763134873221,
+      "tag": "0000_swift_meteorite",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1763190031939,
+      "tag": "0001_blue_butterfly",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1763213911355,
+      "tag": "0002_outgoing_captain_midlands",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1763215183923,
+      "tag": "0003_mute_eddie_brock",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1763347999908,
+      "tag": "0004_brave_gwen_stacy",
+      "breakpoints": true
+    }
+  ]
+}
