@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
   request: NextRequest,
-  context: { params: { agentId: string } }
+  context: { params: Promise<{ agentId: string }> }
 ) {
   try {
     const { agentId } = await context.params;
