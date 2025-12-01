@@ -1,0 +1,1 @@
+ALTER TABLE "agent" ADD COLUMN "agent_tool_config" jsonb;

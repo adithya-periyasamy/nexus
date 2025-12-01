@@ -3,6 +3,7 @@ import * as schema from "@/db/schema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { openAPI } from "better-auth/plugins";
+import { sendPasswordResetEmail } from "./email";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -20,6 +21,13 @@ export const auth = betterAuth({
 
   emailAndPassword: {
     enabled: true,
+    sendResetPassword: async ({ user, url, token }, request) => {
+      await sendPasswordResetEmail({
+        to: user.email,
+        resetUrl: url,
+        userName: user.name,
+      });
+    },
   },
   plugins: [openAPI()],
 });

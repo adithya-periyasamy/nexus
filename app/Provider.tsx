@@ -1,6 +1,7 @@
 "use client";
 
 import { WorkflowContext } from "@/context/WorkflowContext";
+import { ReactFlowProvider } from "@xyflow/react";
 import { useState } from "react";
 
 const Provider = ({ children }: any) => {
@@ -14,20 +15,28 @@ const Provider = ({ children }: any) => {
   ]);
   const [nodeEdges, setNodeEdges] = useState([]);
   const [agentName, setAgentName] = useState("Agent Name");
+  const [selectedNode, setSelectedNode] = useState(null);
+  const [agentID, setAgentID] = useState("");
   return (
     <>
-      <WorkflowContext.Provider
-        value={{
-          addedNodes,
-          setAddedNodes,
-          nodeEdges,
-          setNodeEdges,
-          agentName,
-          setAgentName,
-        }}
-      >
-        <div>{children}</div>
-      </WorkflowContext.Provider>
+      <ReactFlowProvider>
+        <WorkflowContext.Provider
+          value={{
+            addedNodes,
+            setAddedNodes,
+            nodeEdges,
+            setNodeEdges,
+            agentName,
+            setAgentName,
+            selectedNode,
+            setSelectedNode,
+            agentID,
+            setAgentID,
+          }}
+        >
+          <div>{children}</div>
+        </WorkflowContext.Provider>
+      </ReactFlowProvider>
     </>
   );
 };

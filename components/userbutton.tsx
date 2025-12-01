@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { authClient } from "@/lib/auth-client";
-import { LogOut, Settings, Shield, User } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export function UserButton() {
@@ -42,6 +42,8 @@ export function UserButton() {
 
   return (
     <DropdownMenu>
+      {/*  trigger will work when you click on the button */}
+
       <DropdownMenuTrigger asChild>
         <button className="flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
           <Avatar className="h-9 w-9 cursor-pointer">
@@ -65,7 +67,7 @@ export function UserButton() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
+        {/* <DropdownMenuItem
           onClick={() => router.push("#")}
           className="cursor-pointer"
         >
@@ -86,7 +88,7 @@ export function UserButton() {
           <Shield className="mr-2 h-4 w-4" />
           <span>Manage Account</span>
         </DropdownMenuItem>
-        <DropdownMenuSeparator />
+        <DropdownMenuSeparator /> */}
         <DropdownMenuItem
           onClick={handleSignOut}
           className="cursor-pointer text-red-600 focus:text-red-600"

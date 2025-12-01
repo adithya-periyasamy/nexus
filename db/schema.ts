@@ -75,6 +75,7 @@ export const agentTable = pgTable("agent", {
   config: jsonb("config"), // Stores workflow: { nodes: [], edges: [] }
   nodes: jsonb("nodes"), // Can store nodes separately (optional)
   edges: jsonb("edges"), // Can store edges separately (optional)
+  agentToolConfig: jsonb("agent_tool_config"), // Stores agent tool config: { tools: [] }
   published: boolean("published").notNull().default(false),
   userId: text("user_id")
     .notNull()
@@ -85,4 +86,16 @@ export const agentTable = pgTable("agent", {
     .defaultNow()
     .$onUpdate(() => new Date())
     .notNull(),
+});
+
+export const conversationIdTable = pgTable("conversationIdTable", {
+  conversationId: uuid("conversation_id").defaultRandom().primaryKey(),
+
+  agentId: uuid("agent_id")
+    .notNull()
+    .references(() => agentTable.agentId),
+
+  userId: text("userId")
+    .notNull()
+    .references(() => user.id),
 });

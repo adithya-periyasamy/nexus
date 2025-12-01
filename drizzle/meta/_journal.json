@@ -36,6 +36,34 @@
       "when": 1763347999908,
       "tag": "0004_brave_gwen_stacy",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1764208490044,
+      "tag": "0005_absurd_ultragirl",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1764387410808,
+      "tag": "0006_condemned_moonstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1764387544767,
+      "tag": "0007_nervous_justin_hammer",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1764388621167,
+      "tag": "0008_fresh_the_spike",
+      "breakpoints": true
     }
   ]
 }

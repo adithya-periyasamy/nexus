@@ -84,12 +84,19 @@ export async function PUT(request: Request, context: any) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 }); // 401 -> http status code for not authorized.
     }
 
-    const { nodes, edges } = await request.json(); // text to js obj (reverse of JSON.stringify)
+    const { nodes = [], edges = [] } = await request.json(); // text to js obj (reverse of JSON.stringify)
+
+    console.log("🔥 PUT REQUEST:", nodes, edges);
+
+    // ✅ Best: Remove all ReactFlow internal properties
+    const cleanedNodes = nodes.map(
+      ({ selected, dragging, measured, ...node }: any) => node
+    );
 
     await db
       .update(agentTable)
       .set({
-        nodes: nodes,
+        nodes: cleanedNodes,
         edges: edges,
         updatedAt: new Date(),
       })

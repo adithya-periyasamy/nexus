@@ -11,7 +11,7 @@ const ApiNode = ({ data }: any) => {
         />
         <div className="flex flex-col">
           <h2>API</h2>
-          <p className="text-xs text-gray-500">API</p>
+          <p className="text-xs text-gray-500">{data.label}</p>
         </div>
         <Handle type="source" position={Position.Right} />
         <Handle type="target" position={Position.Left} />

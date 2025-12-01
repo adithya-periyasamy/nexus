@@ -5,12 +5,13 @@
 
 export type AgentType = {
   agentId: string;
-  name: string;
+  name: string | "";
   config: any;
   published: boolean;
   createdAt: Date;
   updatedAt: Date;
   userId: string;
-  nodes: any;
-  edges: any;
+  nodes?: any;
+  edges?: any;
+  agentToolConfig?: any;
 };

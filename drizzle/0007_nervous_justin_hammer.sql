@@ -1,0 +1,1 @@
+ALTER TABLE "conversationIdTable" ALTER COLUMN "agentId" SET DATA TYPE uuid;

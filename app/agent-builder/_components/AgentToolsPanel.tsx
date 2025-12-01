@@ -1,5 +1,3 @@
-"use client";
-
 import { WorkflowContext } from "@/context/WorkflowContext";
 
 import {
@@ -104,3 +102,5 @@ const AgentToolsPanel = () => {
 };
 
 export default AgentToolsPanel;
+
+// AgentToolsPanel → writes to → Context → syncs to → AgentBuilder → passes to → ReactFlow → renders → Custom Node Component
