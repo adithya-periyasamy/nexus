@@ -239,10 +239,12 @@ const PreviewAgent = () => {
       <div>
         <Header agentName={data.name} agentId={agentId} isPreview={true} />
       </div>
-      <div className="grid grid-cols-4">
-        <div className="col-span-3 border rounded-2xl m-5 ">
+      {/* Responsive grid: stack on mobile, side-by-side on lg+ */}
+      <div className="flex flex-col lg:grid lg:grid-cols-4 gap-2 lg:gap-0">
+        {/* Flow Preview - full width on mobile, 3/4 on desktop */}
+        <div className="lg:col-span-3 border rounded-2xl m-3 lg:m-5 order-2 lg:order-1">
           <h2 className="p-2 font-bold">Preview</h2>
-          <div style={{ width: "100%", height: "93vh" }}>
+          <div className="w-full h-[50vh] lg:h-[93vh]">
             <ReactFlow
               nodes={data?.nodes || []}
               edges={data?.edges || []}
@@ -253,7 +255,8 @@ const PreviewAgent = () => {
             </ReactFlow>
           </div>
         </div>
-        <div className="col-span-1 rounded-2xl m-5  p-3 border">
+        {/* Chat UI - full width on mobile, 1/4 on desktop */}
+        <div className="lg:col-span-1 rounded-2xl m-3 lg:m-5 p-3 border min-h-[40vh] lg:min-h-0 order-1 lg:order-2">
           <div className="flex items-center justify-center h-full">
             {!data?.agentToolConfig ? (
               <Button

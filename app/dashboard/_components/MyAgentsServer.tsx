@@ -6,7 +6,7 @@ import { BrainCircuit } from "lucide-react";
 import moment from "moment";
 import { headers } from "next/headers";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+
 
 export default async function MyAgentsServer() {
   const session = await auth.api.getSession({
@@ -14,7 +14,7 @@ export default async function MyAgentsServer() {
   });
 
   if (!session?.user) {
-    redirect("/sign-in");
+    return null;
   }
 
   const agents = await db

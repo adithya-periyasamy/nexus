@@ -63,8 +63,10 @@ const AppSidebar = () => {
     <Sidebar collapsible="icon">
       <SidebarHeader>
         <div className="flex gap-2 items-center">
-          <Image src={"/logo.svg"} alt="Logo" width={35} height={35} />
-          {open && <h2 className="text-xl font-bold">NEXUS</h2>}
+          <Link href="/">
+            <Image src={"/logo.svg"} alt="Logo" width={35} height={35} />
+            {open && <h2 className="text-xl font-bold">NEXUS</h2>}
+          </Link>
         </div>
       </SidebarHeader>
       <SidebarContent>

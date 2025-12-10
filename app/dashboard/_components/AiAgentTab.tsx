@@ -1,4 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Suspense } from "react";
+import AgentsSkeleton from "./AgentsSkeleton";
 import MyAgentsServer from "./MyAgentsServer";
 
 const AiAgentTab = () => {
@@ -11,8 +13,9 @@ const AiAgentTab = () => {
             <TabsTrigger value="template">Templates</TabsTrigger>
           </TabsList>
           <TabsContent value="myagent">
-            {/* <MyAgents /> */}
-            <MyAgentsServer />
+            <Suspense fallback={<AgentsSkeleton />}>
+              <MyAgentsServer />
+            </Suspense>
           </TabsContent>
           <TabsContent value="template">Coming soon...</TabsContent>
         </Tabs>

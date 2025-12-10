@@ -83,24 +83,29 @@ const ChatUI = ({
     <div className="flex flex-col h-full w-full">
       {/* Header */}
       <div className="flex justify-between items-center border-b p-2 lg:p-3">
-        <h2>{agentDetail?.name}</h2>
-        <Button onClick={GenerateAgentToolConfig} disabled={loading}>
-          <RefreshCcwIcon className={`${loading && "animate-spin"}`} /> Reboot
-          Agent
+        <h2 className="text-sm lg:text-base font-medium truncate">{agentDetail?.name}</h2>
+        <Button
+          onClick={GenerateAgentToolConfig}
+          disabled={loading}
+          size="sm"
+          className="text-xs lg:text-sm"
+        >
+          <RefreshCcwIcon className={`h-3 w-3 lg:h-4 lg:w-4 ${loading && "animate-spin"}`} />
+          <span className="hidden sm:inline ml-1">Reboot Agent</span>
+          <span className="sm:hidden ml-1">Reboot</span>
         </Button>
       </div>
 
-      <div className="w-full h-[85vh] p-3 flex flex-col">
+      <div className="w-full h-[35vh] lg:h-[85vh] p-2 lg:p-3 flex flex-col">
         {/* Message Section */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-3 flex flex-col">
+        <div className="flex-1 overflow-y-auto p-2 lg:p-4 space-y-3 flex flex-col">
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`p-2 rounded-lg max-w-[80%] break-words ${
-                message.role === "user"
+              className={`p-2 rounded-lg max-w-[80%] break-words ${message.role === "user"
                   ? "bg-blue-500 text-white self-end"
                   : "bg-gray-300 text-black self-start"
-              } `}
+                } `}
             >
               <div className="text-sm break-works overflow-wrap-anywhere">
                 <ReactMarkdown>{message.content}</ReactMarkdown>
