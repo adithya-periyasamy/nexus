@@ -61,12 +61,12 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="p-6 text-center text-gray-500 text-sm">
-        developed by{" "}
+        for queries, contact{" "}
         <Link
           href="https://www.linkedin.com/in/adithya-periyasamy"
           className="text-purple-500 hover:underline"
         >
-          Adithya P
+          Adithya P.
         </Link>
       </footer>
     </div>

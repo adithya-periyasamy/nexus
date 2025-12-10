@@ -12,7 +12,7 @@ export async function GET(request: Request, context: any) {
     console.log(request.method);
 
     const session = await auth.api.getSession({
-      headers: await headers(),
+      headers: await headers(), // will contain the session token in the headers(cookie)
     });
 
     if (!session?.user) {

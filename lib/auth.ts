@@ -6,10 +6,11 @@ import { openAPI } from "better-auth/plugins";
 import { sendPasswordResetEmail } from "./email";
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
   database: drizzleAdapter(db, {
     provider: "pg", // or "mysql", "sqlite"
     schema: {
-      ...schema,
+      ...schema, // your drizzle schema for the database queries
     },
   }),
   socialProviders: {

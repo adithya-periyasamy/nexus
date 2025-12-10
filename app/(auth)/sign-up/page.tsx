@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z
@@ -107,10 +107,12 @@ export default function SignUpPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md space-y-6 rounded-lg border-2 border-gray-200 bg-white p-8 shadow-lg">
-        <Toaster />
+        {/* <Toaster /> */}
 
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-900">NEXUS</h1>
+          <Link href="/">
+            <h1 className="text-3xl font-bold text-gray-900">NEXUS</h1>
+          </Link>
           <h2 className="text-xl font-semibold text-gray-900">
             Create your account
           </h2>
@@ -227,11 +229,11 @@ export default function SignUpPage() {
               {loading ? "Creating account..." : "Continue"}
             </Button>
 
-            {errorMessage && (
+            {/* {errorMessage && (
               <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
                 {errorMessage}
               </div>
-            )}
+            )} */}
           </form>
         </Form>
 

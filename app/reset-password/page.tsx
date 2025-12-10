@@ -17,7 +17,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z
@@ -83,7 +83,7 @@ function ResetPasswordForm() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md space-y-6 rounded-lg border-2 border-gray-200 bg-white p-8 shadow-lg">
-        <Toaster />
+        {/* <Toaster /> */}
 
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900">NEXUS</h1>

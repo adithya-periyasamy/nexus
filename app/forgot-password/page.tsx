@@ -16,7 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -41,7 +41,7 @@ export default function ForgotPasswordPage() {
     try {
       // Call Better Auth API to send reset email
       await forgotPassword(values.email);
-      
+
       setUserEmail(values.email);
       setEmailSent(true);
       toast.success("Password reset link sent! Check your email.");
@@ -58,8 +58,8 @@ export default function ForgotPasswordPage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
         <div className="w-full max-w-md space-y-6 rounded-lg border-2 border-gray-200 bg-white p-8 shadow-lg text-center">
-          <Toaster />
-          
+          {/* <Toaster /> */}
+
           {/* Success Icon */}
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
             <svg
@@ -78,11 +78,15 @@ export default function ForgotPasswordPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Check your email</h2>
+            <h2 className="text-2xl font-bold text-gray-900">
+              Check your email
+            </h2>
             <p className="mt-2 text-sm text-gray-600">
               We've sent a password reset link to
             </p>
-            <p className="mt-1 text-sm font-semibold text-gray-900">{userEmail}</p>
+            <p className="mt-1 text-sm font-semibold text-gray-900">
+              {userEmail}
+            </p>
           </div>
 
           <div className="text-left bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -113,7 +117,7 @@ export default function ForgotPasswordPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md space-y-6 rounded-lg border-2 border-gray-200 bg-white p-8 shadow-lg">
-        <Toaster />
+        {/* <Toaster /> */}
 
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900">NEXUS</h1>
@@ -168,8 +172,3 @@ export default function ForgotPasswordPage() {
     </div>
   );
 }
-
-
-
-
-
