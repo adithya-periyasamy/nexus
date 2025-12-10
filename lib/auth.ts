@@ -7,6 +7,10 @@ import { sendPasswordResetEmail } from "./email";
 
 export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
+  trustedOrigins: [
+    "https://nexus-agent-builder.vercel.app", // Production
+    process.env.NEXT_PUBLIC_URL || "", // Current deployment URL from env
+  ].filter(Boolean),
   database: drizzleAdapter(db, {
     provider: "pg", // or "mysql", "sqlite"
     schema: {
