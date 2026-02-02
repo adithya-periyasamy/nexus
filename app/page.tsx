@@ -18,6 +18,8 @@ export default function Home() {
 
   const [loading, setLoading] = useState(false);
 
+  console.log(process.env.NEXT_PUBLIC_URL);
+
   return (
     <div className="min-h-screen text-black flex flex-col">
       {/* Header */}
